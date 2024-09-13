@@ -5,10 +5,14 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.subsystems.GroundIntake;
 
 public class GroundIntakeNote extends Command {
+  public GroundIntake intake;
   /** Creates a new GroundIntakeNote. */
-  public GroundIntakeNote() {
+  public GroundIntakeNote(GroundIntake gi) {
+    addRequirements(gi);
+    intake = gi;
     // Use addRequirements() here to declare subsystem dependencies.
   }
 
@@ -18,7 +22,9 @@ public class GroundIntakeNote extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    intake.intakeNote();
+  }
 
   // Called once the command ends or is interrupted.
   @Override
@@ -27,6 +33,6 @@ public class GroundIntakeNote extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    return false;
+    return intake.getLIntakelimitSwitch() || intake.getRIntakelimitSwitch();
   }
 }

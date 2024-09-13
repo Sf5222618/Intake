@@ -18,13 +18,19 @@ public final class Constants {
     
 
   }
-  
-  public static final int pivotMotorID = 0;
-  public static final int intakeMotorID = 0;
-  public static final int kP = 0;
-  public static final int kI = 0;
-  public static final int kD = 0;
 
+  public static final int pivotMotorID = 45;
+  public static final int intakeMotorID = 40;
+  public static final double kP = 0.035; 
+  public static final double kI = 0;
+  public static final double kD = 0;
+  public static final double maxEncoderVal = 0.5;
+  public static final double targetEncoderVal = 54.5; //rotations
   public static final double intakeSpeed = 0;
+  public static final int lIntakeLSPort = 8;
+  public static final int rIntakeLSPort = 9;
+  public static final int lPivotLSPort = 7;
+  public static final int rPivotLSPort = 0;
+
 
 }
